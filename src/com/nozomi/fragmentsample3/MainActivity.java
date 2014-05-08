@@ -27,7 +27,9 @@ public class MainActivity extends ActionBarActivity implements
 
 		ActionBar actionBar = getSupportActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-		actionBar.setDisplayShowTitleEnabled(true);
+		actionBar.setDisplayShowTitleEnabled(false);
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setHomeButtonEnabled(true);
 
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager()
 				.findFragmentById(R.id.navigation_drawer);
@@ -51,7 +53,8 @@ public class MainActivity extends ActionBarActivity implements
 
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		fragmentManager.beginTransaction().replace(R.id.container, fragment)
-				.addToBackStack(null).commit();
+		// .addToBackStack(null)
+				.commit();
 	}
 
 }

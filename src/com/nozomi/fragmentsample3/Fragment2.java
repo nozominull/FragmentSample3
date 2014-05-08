@@ -25,8 +25,7 @@ public class Fragment2 extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.simple_fragment, container,
 				false);
-		TextView textView = (TextView) rootView
-				.findViewById(R.id.text);
+		TextView textView = (TextView) rootView.findViewById(R.id.text);
 		textView.setText("2");
 		return rootView;
 	}

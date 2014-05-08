@@ -1,8 +1,6 @@
 package com.nozomi.fragmentsample3;
 
-import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
@@ -88,9 +86,9 @@ public class NavigationDrawerFragment extends Fragment {
 						selectItem(position);
 					}
 				});
-		mDrawerListView.setAdapter(new ArrayAdapter<String>(getActionBar()
-				.getThemedContext(), android.R.layout.simple_list_item_1,
-				android.R.id.text1, new String[] { "1-3", "4", "5" }));
+		mDrawerListView.setAdapter(new ArrayAdapter<String>(getActivity(),
+				android.R.layout.simple_list_item_1, android.R.id.text1,
+				new String[] { "1-3", "4", "5" }));
 		mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
 		return mDrawerListView;
 	}
@@ -118,10 +116,6 @@ public class NavigationDrawerFragment extends Fragment {
 		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
 				GravityCompat.START);
 		// set up the drawer's list view with items and click listener
-
-		ActionBar actionBar = getActionBar();
-		actionBar.setDisplayHomeAsUpEnabled(true);
-		actionBar.setHomeButtonEnabled(true);
 
 		// ActionBarDrawerToggle ties together the the proper interactions
 		// between the navigation drawer and the action bar app icon.
@@ -221,10 +215,6 @@ public class NavigationDrawerFragment extends Fragment {
 		}
 
 		return super.onOptionsItemSelected(item);
-	}
-
-	private ActionBar getActionBar() {
-		return ((ActionBarActivity) getActivity()).getSupportActionBar();
 	}
 
 	/**

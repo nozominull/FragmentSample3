@@ -1,5 +1,7 @@
 package com.nozomi.fragmentsample3;
 
+import java.lang.reflect.Field;
+
 import com.viewpagerindicator.IconPagerAdapter;
 import com.viewpagerindicator.IconTabPageIndicator;
 
@@ -94,5 +96,20 @@ public class MainFragment extends Fragment {
 			return R.drawable.ic_launcher;
 		}
 
+	}
+
+	@Override
+	public void onDetach() {
+		super.onDetach();
+		try {
+			Field childFragmentManager = Fragment.class
+					.getDeclaredField("mChildFragmentManager");
+			childFragmentManager.setAccessible(true);
+			childFragmentManager.set(this, null);
+		} catch (NoSuchFieldException e) {
+			throw new RuntimeException(e);
+		} catch (IllegalAccessException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }

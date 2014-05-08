@@ -6,6 +6,7 @@ new FragmentSample
 References:
 --------
 appcompat_v7
+
 [ViewPagerIndicator][1]
 
 Screenshots:

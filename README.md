@@ -1,7 +1,7 @@
 FragmentSample3
 ===============
 
-new FragmentSample
+new FragmentSample.mix 2 FragmentSample2's ways into 1 sample.
 
 References:
 --------
